@@ -2,30 +2,13 @@ var board = new Array(42).fill(0);
 
 window.onload = function() {
     var b = document.getElementById("Board");
-    var rowOne = document.getElementById("rowOne");
-    var rowTwo = document.getElementById("rowTwo");
-    var rowThree = document.getElementById("rowThree");
-    var rowFour = document.getElementById("rowFour");
-    var rowFive = document.getElementById("rowFive");
-    var rowSix = document.getElementById("rowSix");
+    
+    var rows = document.getElementsByClassName("boardRow");
 
-    for (let i = 0; i < 7; i++) {
-        $(rowOne).append('<div data-space='+i+' data-filled='+board[i]+' class="space col-sm-auto">Test</div>');     
-    }
-    for (let i=7; i < 14; i++) {
-        $(rowTwo).append('<div data-space='+i+' data-filled='+board[i]+' class="space col-sm-auto">Test</div>');     
-    }
-    for (let i=14; i < 21; i++) {
-        $(rowThree).append('<div data-space='+i+' data-filled='+board[i]+' class="space col-sm-auto">Test</div>');     
-    }
-    for (let i=21; i < 28; i++) {
-        $(rowFour).append('<div data-space='+i+' data-filled='+board[i]+' class="space col-sm-auto">Test</div>');     
-    }
-    for (let i=28; i < 35; i++) {
-        $(rowFive).append('<div data-space='+i+' data-filled='+board[i]+' class="space col-sm-auto">Test</div>');     
-    }
-    for (let i=35; i < 42; i++) {
-        $(rowSix).append('<div data-space='+i+' data-filled='+board[i]+' class="space col-sm-auto">Test</div>');     
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 7; j++) {
+            $(rows[i]).append('<div data-space='+(i*7+j)+' data-filled='+board[i*7+j]+' class="space col-sm-auto">Test</div>');     
+        }
     }
 
     $(".space").on("click", function(){
